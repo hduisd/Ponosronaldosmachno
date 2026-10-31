@@ -17,14 +17,14 @@ jobs:
       - name: Find or unpack the project
         run: |
           set -e
-          if [ -f antcolony-mod-1.21.1.zip ]; then
+          if [ -f dynasty-mod-neoforge-1.21.1.zip ]; then
             rm -rf _project
             mkdir _project
-            unzip -q -o antcolony-mod-1.21.1.zip -d _project
+            unzip -q -o dynasty-mod-neoforge-1.21.1.zip -d _project
           fi
           GRADLE_FILE=$(find . -maxdepth 4 -name build.gradle -not -path './.git/*' | head -n 1)
           if [ -z "$GRADLE_FILE" ]; then
-            echo "build.gradle not found. Upload antcolony-mod-1.21.1.zip or the project files to the repository root."
+            echo "build.gradle not found. Upload dynasty-mod-neoforge-1.21.1.zip or the project files to the repository root."
             exit 1
           fi
           PROJ=$(dirname "$GRADLE_FILE")
